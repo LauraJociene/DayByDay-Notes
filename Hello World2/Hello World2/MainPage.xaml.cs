@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace DayByDay_Notes
+namespace Hello_World2
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -29,7 +29,12 @@ namespace DayByDay_Notes
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-           
+
+        }
+
+        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
