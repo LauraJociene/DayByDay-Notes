@@ -52,10 +52,7 @@ namespace DayByDay_Notes
             this.Frame.Navigate(typeof(SearchPage));
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
