@@ -63,7 +63,7 @@ namespace DayByDay_Notes
                        
         }
 
-        private void add_Click(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             ChangeVisibilityState(textBox);
 
