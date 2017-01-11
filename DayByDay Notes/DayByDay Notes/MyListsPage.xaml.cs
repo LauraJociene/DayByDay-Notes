@@ -20,11 +20,19 @@ namespace DayByDay_Notes
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class BlankPage3 : Page
+    public sealed partial class MyListsPage : Page
     {
-        public BlankPage3()
+        public MyListsPage()
         {
             this.InitializeComponent();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
         }
     }
 }

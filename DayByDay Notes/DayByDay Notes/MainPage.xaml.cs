@@ -24,12 +24,47 @@ namespace DayByDay_Notes
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            this.InitializeComponent();            
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void NotesButton_Click(object sender, RoutedEventArgs e)
         {
-           
+            this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void ListsButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MyListsPage));
+        }
+
+        private void EventsButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MyEventsPage));
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SettingsPage));
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SearchPage));
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+                       
         }
     }
+
 }
