@@ -65,6 +65,25 @@ namespace DayByDay_Notes
             }
                        
         }
+
+        private void add_Click(object sender, RoutedEventArgs e)
+        {
+            ChangeVisibilityState(textBox);
+
+        }
+
+        //method used to change element's visibility, accepts element's name as a parameter.
+        public void ChangeVisibilityState(UIElement test)
+        {
+            if (test.Visibility == Visibility.Collapsed)
+            {
+                test.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                test.Visibility = Visibility.Collapsed;
+            }
+        }
     }
 
 }
