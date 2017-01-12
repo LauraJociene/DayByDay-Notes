@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using DayByDay_Notes.Models;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,9 +23,12 @@ namespace DayByDay_Notes
     /// </summary>
     public sealed partial class MyEventsPage : Page
     {
+        private List<Event> Events;
+
         public MyEventsPage()
         {
             this.InitializeComponent();
+            Events = EventManager.GetEvents();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -34,5 +38,8 @@ namespace DayByDay_Notes
                 Frame.GoBack();
             }
         }
+
+       
+
     }
 }

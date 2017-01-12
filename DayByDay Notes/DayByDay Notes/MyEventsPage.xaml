@@ -5,12 +5,85 @@
     xmlns:local="using:DayByDay_Notes"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:DayByDay_Notes.Models"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="102*"/>
+            <ColumnDefinition Width="931*"/>
+            <ColumnDefinition Width="887*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="81*"/>
+            <RowDefinition Height="562*"/>
+            <RowDefinition Height="437*"/>
+        </Grid.RowDefinitions>
+        <CalendarView HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"                       
+            Margin="10" Grid.Row="1" Grid.Column="2"/>
         <Button x:Name="BackButton" Content="Back"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Width="90" FontSize="15"
-            Margin="10,10,0,0"
+            HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+            Grid.Column="0"
+            Grid.Row="0"
+            Margin="10,10,12,7"
             Click="BackButton_Click"/>
+
+        <ListView 
+            Grid.Column="1" Grid.Row="1"
+            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+            Margin="10" Header="My Events">
+            <ListViewItem Background="#FFFFC6C6" BorderBrush="Black" Content="First Event"/>
+            <ListViewItem Background="#FFD9FDAE" Content="Second Event"/>
+            <ListViewItem Background="#FFFFFFBF" Content="Third Event"/>
+            <ListViewItem Background="#FFCAD1FD" Content="Fourth Event"/>
+            <ListViewItem Background="#FFE3C1FF" Content="Fifth Event"/>
+        </ListView>
+        <ListView x:Name="EventsList" 
+                  Grid.Column="1"
+                  Grid.Row="2"
+                  ItemsSource="{x:Bind Events}">
+            <FlyoutBase.AttachedFlyout>
+                <DatePickerFlyout/>
+            </FlyoutBase.AttachedFlyout>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{x:Bind Title}"/>
+                        <TextBlock Text="{x:Bind Content}"/>
+                        <TextBlock Text="{x:Bind Date}"/>
+                        <TextBlock Text="{x:Bind Time}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="AddButton" Content="+"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Click="AddButton_Click" Margin="10,10,8,481" Grid.Row="1"/>
+        <Button x:Name="SearchButton" Content="Search"
+            HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+            Margin="10,162,8,330"
+            Grid.Row="1" Grid.Column="0"
+            Click="SearchButton_Click"/>
+        <Button x:Name="NotesButton" Content="Notes"
+            Grid.Column="1"
+            Grid.Row ="0"
+            HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+            Margin="12,10,749,0"
+            Click="NotesButton_Click"/>
+        <Button x:Name="ListsButton" Content="Lists" 
+            Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+            Margin="202,10,559,0"
+            Click="ListsButton_Click"/>
+        <Button x:Name="EventsButton" Content="Events"
+            Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+            Margin="392,10,369,0"
+            Click="EventsButton_Click"/>
+        <Button x:Name="SettingsButton" Content="Settings"
+            HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+            Margin="10,86,8,405"
+            Grid.Row="1" Grid.Column="0"
+            Click="SettingsButton_Click"/>
+
     </Grid>
 </Page>

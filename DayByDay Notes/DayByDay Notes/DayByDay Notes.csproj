@@ -95,7 +95,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\Model.cs" />
     <Compile Include="MyEventsPage.xaml.cs">
       <DependentUpon>MyEventsPage.xaml</DependentUpon>
     </Compile>
