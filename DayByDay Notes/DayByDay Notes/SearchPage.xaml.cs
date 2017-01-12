@@ -34,5 +34,10 @@ namespace DayByDay_Notes
                 Frame.GoBack();
             }
         }
+
+        private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+
+        }
     }
 }

@@ -52,11 +52,6 @@ namespace DayByDay_Notes
             this.Frame.Navigate(typeof(SearchPage));
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             if (Frame.CanGoBack)
@@ -66,7 +61,7 @@ namespace DayByDay_Notes
                        
         }
 
-        private void add_Click(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             ChangeVisibilityState(textBox);
 
