@@ -23,7 +23,7 @@ namespace DayByDay_Notes
     /// </summary>
     public sealed partial class MyEventsPage : Page
     {
-        private List<Event> Events;
+        public List<Event> Events;
 
         public MyEventsPage()
         {

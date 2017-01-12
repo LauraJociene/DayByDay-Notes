@@ -29,10 +29,10 @@
             Margin="10,10,12,7"
             Click="BackButton_Click"/>
 
-        <ListView 
-            Grid.Column="1" Grid.Row="1"
+        <ListView Grid.Column="1" Grid.Row="1"
             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
             Margin="10" Header="My Events">
+            
             <ListViewItem Background="#FFFFC6C6" BorderBrush="Black" Content="First Event"/>
             <ListViewItem Background="#FFD9FDAE" Content="Second Event"/>
             <ListViewItem Background="#FFFFFFBF" Content="Third Event"/>
