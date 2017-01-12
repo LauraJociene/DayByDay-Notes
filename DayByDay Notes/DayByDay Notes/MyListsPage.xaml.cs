@@ -39,6 +39,7 @@ namespace DayByDay_Notes
             using (var db = new BloggingContext())
             {
                 Blogs.ItemsSource = db.Blogs.ToList();
+                
             }
         }
 

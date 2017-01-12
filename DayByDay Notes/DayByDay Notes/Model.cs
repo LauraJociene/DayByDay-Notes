@@ -11,7 +11,7 @@ namespace DayByDay_Notes
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=Blogging.db");
+            optionsBuilder.UseSqlite("Filename=DayByDay.db");
         }
     }
     

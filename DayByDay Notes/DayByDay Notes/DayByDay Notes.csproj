@@ -101,6 +101,10 @@
     <Compile Include="Migrations\20170112164306_MyFirstMigration.designer.cs">
       <DependentUpon>20170112164306_MyFirstMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20170112190553_DateColumn.cs" />
+    <Compile Include="Migrations\20170112190553_DateColumn.designer.cs">
+      <DependentUpon>20170112190553_DateColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\BloggingContextModelSnapshot.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="MyEventsPage.xaml.cs">
