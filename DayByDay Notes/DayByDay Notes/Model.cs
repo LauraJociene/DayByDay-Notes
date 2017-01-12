@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
-
 namespace DayByDay_Notes
+
 {
     public class BloggingContext : DbContext
     {
@@ -11,7 +11,7 @@ namespace DayByDay_Notes
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Filename=DayByDayNotes.db");
+            optionsBuilder.UseSqlite("Filename=Blogging.db");
         }
     }
 

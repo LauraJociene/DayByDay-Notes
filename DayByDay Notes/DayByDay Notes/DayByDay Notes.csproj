@@ -89,12 +89,18 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="App.config" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20170112164306_MyFirstMigration.cs" />
+    <Compile Include="Migrations\20170112164306_MyFirstMigration.designer.cs">
+      <DependentUpon>20170112164306_MyFirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\BloggingContextModelSnapshot.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="MyEventsPage.xaml.cs">
       <DependentUpon>MyEventsPage.xaml</DependentUpon>

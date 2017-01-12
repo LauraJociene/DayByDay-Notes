@@ -34,5 +34,24 @@ namespace DayByDay_Notes
                 Frame.GoBack();
             }
         }
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            using (var db = new BloggingContext())
+            {
+                Blogs.ItemsSource = db.Blogs.ToList();
+            }
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            using (var db = new BloggingContext())
+            {
+                var blog = new Blog { Url = NewBlogUrl.Text };
+                db.Blogs.Add(blog);
+                db.SaveChanges();
+
+                Blogs.ItemsSource = db.Blogs.ToList();
+            }
+        }
     }
 }
