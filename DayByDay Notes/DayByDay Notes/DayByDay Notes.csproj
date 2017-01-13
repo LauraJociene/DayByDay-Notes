@@ -120,11 +120,6 @@
     <None Include="DayByDay Notes_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Circle Add -01.png" />
-    <Content Include="Assets\Circled Left 01-WF.png" />
-    <Content Include="Assets\Garbage-WF.png" />
-    <Content Include="Assets\Search-WF.png" />
-    <Content Include="Assets\Setting_2-WF.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

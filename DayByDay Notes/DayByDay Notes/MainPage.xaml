@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <!--test-->
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="90*" />
@@ -16,8 +17,8 @@
             <RowDefinition Height="270*"/>
             <RowDefinition Height="442*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
 
+        <Grid.ColumnDefinitions>
             <ColumnDefinition Width="110*"/>
             <ColumnDefinition Width="200*"/>
             <ColumnDefinition Width="200*"/>
@@ -26,72 +27,77 @@
             <ColumnDefinition Width="287*"/>
             <ColumnDefinition Width="426*"/>
         </Grid.ColumnDefinitions>
+     
         <CalendarView HorizontalAlignment="Stretch"
                       VerticalAlignment="Stretch" Grid.Row="1"                       
                       Margin="10" 
                       Grid.RowSpan="4" Grid.Column="4"/>
+        
         <Popup Grid.ColumnSpan="6"/>
+
         <Button x:Name="NotesButton" Content="Notes"
                 Grid.Column="1"
                 Grid.Row ="0"
                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                  Margin="10"
+                Margin="10"
                 Background="Black"
                 Foreground="White"
-              
-                
-                  Click="NotesButton_Click"/>
-        <Button x:Name="ListsButton" Content="Lists" 
+                FontWeight="Bold"
+                Click="NotesButton_Click" />
+              <Button/>
+
+            <Button x:Name="ListsButton" Content="Lists" 
                   Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
                   Background="Black"
                   Foreground="White"
-                  Click="ListsButton_Click"/>
-        
+                  Click="ListsButton_Click" FontWeight="Bold"/>
+                <Button/>
+
+
+
         <Button x:Name="EventsButton" Content="Events"
                   Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
-                Background="Black"
-                Foreground="White"
-           
+                  Background="Black"
+                  Foreground="White"
+                  Click="EventsButton_Click" FontWeight="Bold"/>
+                <Button/>
 
-                  Click="EventsButton_Click"/>
-        <Button x:Name="AddButton" Content=""
+        <Button x:Name="AddButton" 
+                  FontFamily="Segoe MDL2 Assets" Content="&#xE710;" FontSize="20"
                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Grid.Row="1" Grid.Column="0"
                   Margin="10"
-                  Click="AddButton_Click">
-            <Button.Background>
-                <ImageBrush Stretch="UniformToFill" ImageSource="Assets/Circle Add -01.png"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="SettingsButton" Content=""
+                  Background="White"
+                  Click="AddButton_Click" FontWeight="Bold">
+                </Button>
+
+                <Button x:Name="SettingsButton"  
+                  FontFamily="Segoe MDL2 Assets" Content="&#xE713;" FontSize="20"
                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
                   Grid.Row="2" Grid.Column="0"
-                  Click="SettingsButton_Click">
-            <Button.Background>
-                <ImageBrush Stretch="UniformToFill" ImageSource="Assets/Setting_2-WF.png"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="SearchButton" Content=""
+                  Background="White"
+                  Click="SettingsButton_Click" FontWeight="Bold">
+                </Button>
+                
+        <Button x:Name="SearchButton" FontFamily="Segoe MDL2 Assets" Content="&#xE71E;" FontSize="20"
                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
                   Grid.Row="3" Grid.Column="0"
-                  Click="SearchButton_Click">
-            <Button.Background>
-                <ImageBrush Stretch="UniformToFill" ImageSource="Assets/Search-WF.png"/>
-            </Button.Background>
+                  Background="White"
+                  Click="SearchButton_Click" FontWeight="Bold">
+            
         </Button>
-        <Button x:Name="BackButton" Content=""
+        <Button x:Name="BackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE0A6;" FontSize="20"
                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Grid.Column="0"
                   Grid.Row="0"
                   Margin="10"
-                  Click="BackButton_Click">
-            <Button.Background>
-                <ImageBrush Stretch="UniformToFill" ImageSource="Assets/Circled Left 01-WF.png"/>
-            </Button.Background>
+                 Background="White"
+                  Click="BackButton_Click" FontWeight="Bold">
+            
         </Button>
         <TextBox x:Name="textBox" 
                  Grid.Column="1" Grid.Row="1"
