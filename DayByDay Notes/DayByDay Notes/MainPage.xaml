@@ -17,7 +17,6 @@
             <RowDefinition Height="442*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-
             <ColumnDefinition Width="110*"/>
             <ColumnDefinition Width="200*"/>
             <ColumnDefinition Width="200*"/>
@@ -30,7 +29,6 @@
                       VerticalAlignment="Stretch" Grid.Row="1"                       
                       Margin="10" 
                       Grid.RowSpan="4" Grid.Column="4"/>
-        <Popup Grid.ColumnSpan="6"/>
         <Button x:Name="NotesButton" Content="Notes"
                 Grid.Column="1"
                 Grid.Row ="0"

@@ -9,111 +9,105 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="102*"/>
-            <ColumnDefinition Width="931*"/>
-            <ColumnDefinition Width="887*"/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="81*"/>
-            <RowDefinition Height="562*"/>
-            <RowDefinition Height="437*"/>
+            <RowDefinition Height="90*" />
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="270*"/>
+            <RowDefinition Height="442*"/>
         </Grid.RowDefinitions>
-        <CalendarView HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"                       
-            Margin="10" Grid.Row="1" Grid.Column="2"/>
-        <Button x:Name="BackButton" Content="Back"
-            HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-            Grid.Column="0"
-            Grid.Row="0"
-            Margin="10,10,12,7"
-            Click="BackButton_Click"/>           
-        <Button x:Name="AddButton" Content="+"
-                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                Click="AddButton_Click" Margin="10,10,8,481" Grid.Row="1"/>
-        <Button x:Name="SearchButton" Content="Search"
-            HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-            Margin="10,162,8,330"
-            Grid.Row="1" Grid.Column="0"
-            Click="SearchButton_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="600*"/>
+            <ColumnDefinition Width="287*"/>
+            <ColumnDefinition Width="426*"/>
+        </Grid.ColumnDefinitions>
         <Button x:Name="NotesButton" Content="Notes"
-            Grid.Column="1"
-            Grid.Row ="0"
-            HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-            Margin="12,10,749,0"
-            Click="NotesButton_Click"/>
+                Grid.Column="1"
+                Grid.Row ="0"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Margin="10"
+                  Click="NotesButton_Click"/>
         <Button x:Name="ListsButton" Content="Lists" 
-            Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-            Margin="202,10,559,0"
-            Click="ListsButton_Click"/>
+                  Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Margin="10"
+                  Click="ListsButton_Click"/>
         <Button x:Name="EventsButton" Content="Events"
-            Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-            Margin="392,10,369,0"
-            Click="EventsButton_Click"/>
-        <Button x:Name="SettingsButton" Content="Settings"
+                  Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Margin="10"
+                  Click="EventsButton_Click"/>
+        <Button x:Name="AddButton" Content="+"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Grid.Row="1" Grid.Column="0"
+                  Margin="10">
+            <Button.Flyout>
+                <Flyout Placement="Right">
+                    <StackPanel
             HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-            Margin="10,86,8,405"
-            Grid.Row="1" Grid.Column="0"
-            Click="SettingsButton_Click"/>
-        <StackPanel x:Name="listView" HorizontalAlignment="Left" Height="562" VerticalAlignment="Top" Width="931" Grid.Column="1" Grid.Row="1">
-            <Grid Height="50">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Pusryciai" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="1" Text="18 - 01 - 2017" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="2" Text="8:30" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            Margin="2"
+            Grid.Column="1" Grid.Row="4" 
+            Grid.RowSpan="1" Grid.ColumnSpan="3">
 
-            </Grid>
+                        <TextBox Name="NewEventInputTextBox"/>
+                        <CalendarDatePicker 
+                            DateFormat="{}{year.full}/{month.integer}/{day.integer}"
+                            Name="NewEventCalendarDatePicker"/>
+                        <TimePicker/>
 
-            <Grid Height="50">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Priespieciai" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="1" Text="18 - 01 - 2017" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="2" Text="11:30" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Button 
+                            Name="AddNewEventButton"
+                            Content="Add New Event" 
+                            Click="AddNewEventButton_Clicked"/>
 
-            </Grid>
-
-            <Grid Height="50">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Pietus" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="1" Text="18 - 01 - 2017" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="2" Text="13:30" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-            </Grid>
-
-            <Grid Height="50">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Vakariene" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="1" Text="18 - 01 - 2017" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="2" Text="18:30" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-            </Grid>
-
-
-
-
-
-
-
-
-
-
+                    </StackPanel>
+                </Flyout>
+            </Button.Flyout>
+        </Button> 
+        <Button x:Name="SettingsButton" Content="Settings"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Margin="10"
+                  Grid.Row="2" Grid.Column="0"
+                  Click="SettingsButton_Click"/>
+        <Button x:Name="SearchButton" Content="Search"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Margin="10"
+                  Grid.Row="3" Grid.Column="0"
+                  Click="SearchButton_Click"/>
+        <Button x:Name="BackButton" Content="Back"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Grid.Column="0"
+                  Grid.Row="0"
+                  Margin="10"
+                  Click="BackButton_Click"/>
+        <CalendarView HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch" Grid.Row="1"                       
+                      Margin="10" 
+                      Grid.RowSpan="4" Grid.Column="4"
+                      SelectionMode="Multiple"
+                      SelectedDatesChanged="EventsCalendarView_SelectedDateChanged"/>
+        
+       <StackPanel x:Name="listView" 
+                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Margin="10"
+                   Grid.Column="1" Grid.Row="1" 
+                   Grid.RowSpan="3" Grid.ColumnSpan="3">
+           
+            <ListView ItemsSource="{x:Bind Events}">
+                <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="data:Event">
+                        <StackPanel>
+                            <TextBlock Text="{x:Bind Content}"/>
+                            <TextBlock Text="{x:Bind Date}"/>
+                            <TextBlock Text="{x:Bind Time}"/>
+                        </StackPanel>
+                        </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
-
+        <TimePicker Grid.Column="4" HorizontalAlignment="Left" Height="0" Margin="121,207,0,0" Grid.Row="4" VerticalAlignment="Top" Width="10"/>
     </Grid>
 </Page>

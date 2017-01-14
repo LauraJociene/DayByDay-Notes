@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using DayByDay_Notes.Models;
+using System.Collections.ObjectModel;
+
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,12 +25,15 @@ namespace DayByDay_Notes
     /// </summary>
     public sealed partial class MyEventsPage : Page
     {
-        public List<Event> Events;
+        private ObservableCollection<Event> Events;
+
+        //public List<Event> Events;
 
         public MyEventsPage()
         {
             this.InitializeComponent();
-            Events = EventManager.GetEvents();
+            //Events = EventManager.GetEvents();
+            Events = new ObservableCollection<Event>();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -82,5 +87,28 @@ namespace DayByDay_Notes
             }
         }
 
+        private void AddEvent_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EventsCalendarView_SelectedDateChanged(CalendarView sender, CalendarViewSelectedDatesChangedEventArgs args)
+        {
+
+        }
+
+        private void AddNewEventButton_Clicked(object sender, RoutedEventArgs e)
+        {
+
+            Events.Add(new Models.Event
+            {
+                Content = NewEventInputTextBox.Text,
+                Date = NewEventCalendarDatePicker.DateFormat
+            });
+
+            NewEventInputTextBox.Text = "";
+            NewEventCalendarDatePicker.DateFormat = "";
+        }
     }
 }
+
