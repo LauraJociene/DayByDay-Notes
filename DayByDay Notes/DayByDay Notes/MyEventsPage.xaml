@@ -27,36 +27,7 @@
             Grid.Column="0"
             Grid.Row="0"
             Margin="10,10,12,7"
-            Click="BackButton_Click"/>
-
-        <ListView Grid.Column="1" Grid.Row="1"
-            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
-            Margin="10" Header="My Events">
-            
-            <ListViewItem Background="#FFFFC6C6" BorderBrush="Black" Content="First Event"/>
-            <ListViewItem Background="#FFD9FDAE" Content="Second Event"/>
-            <ListViewItem Background="#FFFFFFBF" Content="Third Event"/>
-            <ListViewItem Background="#FFCAD1FD" Content="Fourth Event"/>
-            <ListViewItem Background="#FFE3C1FF" Content="Fifth Event"/>
-        </ListView>
-        <ListView x:Name="EventsList" 
-                  Grid.Column="1"
-                  Grid.Row="2"
-                  ItemsSource="{x:Bind Events}">
-            <FlyoutBase.AttachedFlyout>
-                <DatePickerFlyout/>
-            </FlyoutBase.AttachedFlyout>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{x:Bind Title}"/>
-                        <TextBlock Text="{x:Bind Content}"/>
-                        <TextBlock Text="{x:Bind Date}"/>
-                        <TextBlock Text="{x:Bind Time}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            Click="BackButton_Click"/>           
         <Button x:Name="AddButton" Content="+"
                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                 Click="AddButton_Click" Margin="10,10,8,481" Grid.Row="1"/>
@@ -84,6 +55,65 @@
             Margin="10,86,8,405"
             Grid.Row="1" Grid.Column="0"
             Click="SettingsButton_Click"/>
+        <StackPanel x:Name="listView" HorizontalAlignment="Left" Height="562" VerticalAlignment="Top" Width="931" Grid.Column="1" Grid.Row="1">
+            <Grid Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Pusryciai" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Text="18 - 01 - 2017" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2" Text="8:30" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            </Grid>
+
+            <Grid Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Priespieciai" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Text="18 - 01 - 2017" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2" Text="11:30" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            </Grid>
+
+            <Grid Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Pietus" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Text="18 - 01 - 2017" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2" Text="13:30" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            </Grid>
+
+            <Grid Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Vakariene" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Text="18 - 01 - 2017" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2" Text="18:30" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            </Grid>
+
+
+
+
+
+
+
+
+
+
+        </StackPanel>
 
     </Grid>
 </Page>

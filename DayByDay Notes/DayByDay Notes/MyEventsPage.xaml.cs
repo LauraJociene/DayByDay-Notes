@@ -38,8 +38,49 @@ namespace DayByDay_Notes
                 Frame.GoBack();
             }
         }
+        private void NotesButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
 
-       
+        private void ListsButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MyListsPage));
+        }
+
+        private void EventsButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MyEventsPage));
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SettingsPage));
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SearchPage));
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            ChangeVisibilityState(listView);
+
+        }
+
+        //method used to change element's visibility, accepts element's name as a parameter.
+        public void ChangeVisibilityState(UIElement test)
+        {
+            if (test.Visibility == Visibility.Collapsed)
+            {
+                test.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                test.Visibility = Visibility.Collapsed;
+            }
+        }
 
     }
 }
