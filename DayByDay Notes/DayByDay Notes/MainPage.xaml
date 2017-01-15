@@ -8,7 +8,7 @@
     mc:Ignorable="d">
     <!--test-->
     
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource AppBarButtonBackgroundPointerOver}">
         <Grid.RowDefinitions>
             <RowDefinition Height="90*" />
             <RowDefinition Height="90*"/>
@@ -27,7 +27,11 @@
             <ColumnDefinition Width="287*"/>
             <ColumnDefinition Width="426*"/>
         </Grid.ColumnDefinitions>
-     
+
+        <Rectangle Fill="Black" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="7"/>
+        <Rectangle Fill="White" Grid.Column="0" Grid.RowSpan="6"/>
+
+
         <CalendarView HorizontalAlignment="Stretch"
                       VerticalAlignment="Stretch" Grid.Row="1"                       
                       Margin="10" 
@@ -35,34 +39,48 @@
         
         <Popup Grid.ColumnSpan="6"/>
 
-        <Button x:Name="NotesButton" Content="Notes"
+        <Button x:Name="NotesButton"
                 Grid.Column="1"
                 Grid.Row ="0"
                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                 Margin="10"
                 Background="Black"
-                Foreground="White"
-                FontWeight="Bold"
-                Click="NotesButton_Click" />
-              <Button/>
+                Click="NotesButton_Click" >
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text ="&#xE700;" FontFamily = " Segoe MDL2 Assets" Foreground="White" Margin ="3" FontSize="15" FontWeight="Bold"/>
+                <TextBlock Text ="Notes" FontSize ="15"  Foreground="White" FontWeight="Bold" />
+            </StackPanel>
+        </Button>
 
-            <Button x:Name="ListsButton" Content="Lists" 
+
+
+        <Button x:Name="ListsButton"
                   Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
                   Background="Black"
                   Foreground="White"
-                  Click="ListsButton_Click" FontWeight="Bold"/>
-                <Button/>
+                  Click="ListsButton_Click" >
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text ="&#xE14C;" FontFamily = " Segoe MDL2 Assets" Foreground="White" Margin ="3" FontSize="15" FontWeight="Bold"/>
+                <TextBlock Text ="Lists" FontSize ="15"  Foreground="White" FontWeight="Bold" />
+            </StackPanel>
+        </Button>
 
 
 
-        <Button x:Name="EventsButton" Content="Events"
+
+        <Button x:Name="EventsButton"
                   Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
                   Background="Black"
                   Foreground="White"
-                  Click="EventsButton_Click" FontWeight="Bold"/>
-                <Button/>
+                  Click="EventsButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text ="&#xE787;" FontFamily = " Segoe MDL2 Assets" Foreground="White" Margin ="3" FontSize="15" FontWeight="Bold"/>
+                <TextBlock Text ="Events" FontSize ="15"  Foreground="White" FontWeight="Bold" />
+            </StackPanel>
+        </Button>
+
 
         <Button x:Name="AddButton" 
                   FontFamily="Segoe MDL2 Assets" Content="&#xE710;" FontSize="20"
@@ -102,7 +120,8 @@
         <TextBox x:Name="textBox" 
                  Grid.Column="1" Grid.Row="1"
                  Grid.RowSpan="4" Grid.ColumnSpan="3"
-                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10"  
+                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" 
+                 Background="White"
                  TextWrapping="Wrap" Text="TextBox"/>
 
 
