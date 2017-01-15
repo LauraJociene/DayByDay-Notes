@@ -104,9 +104,9 @@
             <ListView ItemsSource="{x:Bind Events}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="data:Event">
-                        <StackPanel>
+                        <StackPanel Margin="3">
                             <TextBlock Text="{x:Bind Content}" FontWeight="Bold" FontSize="18"/>
-                            <TextBlock Text="{x:Bind Date}" FontWeight="Bold"/>
+                            <TextBlock Text="{x:Bind Date}" FontStyle="Italic"/>
                             <TextBlock Text="{x:Bind Time}" FontWeight="Bold"/>
                         </StackPanel>
                     </DataTemplate>
