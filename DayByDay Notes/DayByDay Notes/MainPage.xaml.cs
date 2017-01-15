@@ -68,7 +68,7 @@ namespace DayByDay_Notes
 
         }
 
-        //method used to change element's visibility, accepts element's name as a parameter.
+        
         public void ChangeVisibilityState(UIElement test)
         {
             if (test.Visibility == Visibility.Collapsed)
@@ -80,6 +80,8 @@ namespace DayByDay_Notes
                 test.Visibility = Visibility.Collapsed;
             }
         }
+
+        
     }
 
 }
