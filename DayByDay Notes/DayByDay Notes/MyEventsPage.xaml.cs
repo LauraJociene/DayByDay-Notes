@@ -99,15 +99,18 @@ namespace DayByDay_Notes
 
         private void AddNewEventButton_Clicked(object sender, RoutedEventArgs e)
         {
-
-            Events.Add(new Models.Event
-            {
+            DateTimeOffset selectedDate = (DateTimeOffset)NewEventCalendarDatePicker.Date;
+            string selectedDateFormated = selectedDate.ToString("dddd, dd MMMM");
+            
+            TimeSpan selectedTime = NewEventTimePicker.Time;
+            string selectedTimeFormated = selectedTime.ToString(@"hh\:mm");
+            
+            
+            Events.Add (new Models.Event {
                 Content = NewEventInputTextBox.Text,
-                Date = NewEventCalendarDatePicker.DateFormat
-            });
-
-            NewEventInputTextBox.Text = "";
-            NewEventCalendarDatePicker.DateFormat = "";
+                Date = selectedDateFormated,
+                Time = selectedTimeFormated
+                });
         }
     }
 }
