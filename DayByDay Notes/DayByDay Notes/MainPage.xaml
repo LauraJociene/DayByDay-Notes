@@ -34,36 +34,59 @@
                 Grid.Row ="0"
                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
-                  Click="NotesButton_Click"/>
+                  Click="NotesButton_Click"
+                Background= "Black"
+                Foreground="White"/>
         <Button x:Name="ListsButton" Content="Lists" 
                   Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
-                  Click="ListsButton_Click"/>
+                  Click="ListsButton_Click"
+                Background= "Black"
+                Foreground="White"/>
         <Button x:Name="EventsButton" Content="Events"
                   Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
-                  Click="EventsButton_Click"/>
-        <Button x:Name="AddButton" Content="+"
+                  Click="EventsButton_Click"
+                Background= "Black"
+                Foreground="White"/>
+        <Button x:Name="AddButton"
                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Grid.Row="1" Grid.Column="0"
                   Margin="10"
-                  Click="AddButton_Click"/>
-        <Button x:Name="SettingsButton" Content="Settings"
+                  Click="AddButton_Click">
+            <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="Assets/Circle Add -01.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="SettingsButton"
                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
                   Grid.Row="2" Grid.Column="0"
-                  Click="SettingsButton_Click"/>
-        <Button x:Name="SearchButton" Content="Search"
+                  Click="SettingsButton_Click">
+        <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="Assets/Setting_2-WF.png"/>
+        </Button.Background>
+        </Button>
+        <Button x:Name="SearchButton"
                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
                   Grid.Row="3" Grid.Column="0"
-                  Click="SearchButton_Click"/>
-        <Button x:Name="BackButton" Content="Back"
+                  Click="SearchButton_Click">
+        <Button.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="Assets/Search-WF.png"/>
+        </Button.Background>
+        </Button>
+        <Button x:Name="BackButton"
                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Grid.Column="0"
                   Grid.Row="0"
                   Margin="10"
-                  Click="BackButton_Click"/>
+                  Click="BackButton_Click">
+        <Button.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="Assets/Circled Left 01-WF.png"/>
+        </Button.Background>
+        </Button>
+        
         <TextBox x:Name="textBox" 
                  Grid.Column="1" Grid.Row="1"
                  Grid.RowSpan="4" Grid.ColumnSpan="3"
