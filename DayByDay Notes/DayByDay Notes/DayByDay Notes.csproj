@@ -97,6 +97,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Blog.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="Migrations\20170112164306_MyFirstMigration.cs" />
     <Compile Include="Migrations\20170112164306_MyFirstMigration.designer.cs">
       <DependentUpon>20170112164306_MyFirstMigration.cs</DependentUpon>
