@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace DayByDay_Notes
@@ -67,7 +68,7 @@ namespace DayByDay_Notes
 
         }
 
-        //method used to change element's visibility, accepts element's name as a parameter.
+        
         public void ChangeVisibilityState(UIElement test)
         {
             if (test.Visibility == Visibility.Collapsed)
@@ -79,6 +80,8 @@ namespace DayByDay_Notes
                 test.Visibility = Visibility.Collapsed;
             }
         }
+
+        
     }
 
 }

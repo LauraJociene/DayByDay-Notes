@@ -5,12 +5,139 @@
     xmlns:local="using:DayByDay_Notes"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:DayByDay_Notes.Models"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="BackButton" Content="Back"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Height="70" Width="90" FontSize="15"
-            Margin="10,10,0,0"
-            Click="BackButton_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*" />
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="270*"/>
+            <RowDefinition Height="442*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="600*"/>
+            <ColumnDefinition Width="287*"/>
+            <ColumnDefinition Width="426*"/>
+        </Grid.ColumnDefinitions>
+        <RelativePanel>
+
+        </RelativePanel>
+        <Button x:Name="NotesButton" Content="Notes"
+                Grid.Column="1"
+                Grid.Row ="0"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Margin="10"
+                  Click="NotesButton_Click"
+                Background= "Black"
+                Foreground="White"/>
+        <Button x:Name="ListsButton" Content="Lists" 
+                  Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Margin="10"
+                  Click="ListsButton_Click"
+                Background= "Black"
+                Foreground="White"/>
+        <Button x:Name="EventsButton" Content="Events"
+                  Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Margin="10"
+                  Click="EventsButton_Click"
+                Background= "Black"
+                Foreground="White"/>
+        <Button x:Name="BackButton"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Grid.Column="0"
+                  Grid.Row="0"
+                  Margin="10"
+                  Click="BackButton_Click"
+                  FontFamily="Segoe MDL2 Assets"
+                  Content="&#xE72B;"
+                  Foreground="White" Background="Black">
+        </Button>
+        <Button x:Name="AddButton"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Grid.Row="1" Grid.Column="0"
+                  Margin="10"
+                  FontFamily="Segoe MDL2 Assets"
+                  Content="&#xE109;"
+                    Background="White"
+                    Foreground="Black">
+            <Button.Flyout>
+                <Flyout Placement="Right">
+                    <StackPanel
+            HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+            Margin="2"
+            Grid.Column="1" Grid.Row="4" 
+            Grid.RowSpan="1" Grid.ColumnSpan="3">
+
+                        <TextBlock Text="Content:"/>
+                        <TextBox Name="NewEventInputTextBox" PlaceholderText="Add content about your new Event"/>
+                        <TextBlock Text="Date:"/>
+                        <CalendarDatePicker
+                            PlaceholderText="Choose a date"
+                            DateFormat="{}{dayofweek.full},{day.integer} {month.full}"
+                            Name="NewEventCalendarDatePicker"/>
+                        <TextBlock Text="Time:"/>
+                        <TimePicker Name="NewEventTimePicker"/>
+
+                        <Button 
+                            Name="AddNewEventButton"
+                            Content="Add New Event" 
+                            Click="AddNewEventButton_Clicked"
+                            Background="Black"
+                            Foreground="White"/>
+
+                    </StackPanel>
+                </Flyout>
+            </Button.Flyout>
+        </Button>
+        <Button x:Name="SettingsButton"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Margin="10"
+                  Grid.Row="2" Grid.Column="0"
+                  Click="SettingsButton_Click"
+                  FontFamily="Segoe MDL2 Assets"
+                  Content="&#xE713;"
+                    Background="White"
+                    Foreground="Black">
+        </Button>
+        <CalendarView HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch" Grid.Row="1"                       
+                      Margin="10" 
+                      Grid.RowSpan="4" Grid.Column="4"
+                      SelectionMode="Multiple"
+                      SelectedDatesChanged="EventsCalendarView_SelectedDateChanged"/>
+
+        <StackPanel x:Name="listView" 
+                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Margin="10,10,10,0"
+                   Grid.Column="1" Grid.Row="1" 
+                   Grid.RowSpan="5" Grid.ColumnSpan="3">
+
+            <ListView ItemsSource="{x:Bind Events}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="data:Event">
+                        <StackPanel Margin="3">
+                            <TextBlock Text="{x:Bind Content}" FontWeight="Bold" FontSize="18"/>
+                            <TextBlock Text="{x:Bind Date}" FontStyle="Italic"/>
+                            <TextBlock Text="{x:Bind Time}" FontWeight="Bold"/>
+                            
+                            <RadioButton VerticalAlignment="Center" Content="Remove" FontSize="10"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <AutoSuggestBox Grid.Column="4"  Margin="10"
+                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                        QueryIcon="Find"
+                        PlaceholderText="Search DayByDay Notes"
+                        />
+        <!--TextChanged="AutoSuggestBox_TextChanged"-->
     </Grid>
 </Page>
