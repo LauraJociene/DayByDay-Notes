@@ -11,10 +11,7 @@ namespace DayByDay_Notes
     {
         public int BlogId { get; set; }
         public string Url { get; set; }
-        public DateTime Date { get
-            {
-                return DateTime.Now;
-            } set { } }
+        public DateTime Date { get {return DateTime.Now;} set { } }
 
         public List<Post> Posts { get; set; }
     }
