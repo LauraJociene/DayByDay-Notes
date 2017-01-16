@@ -99,7 +99,9 @@ namespace DayByDay_Notes
 
         private void AddNewEventButton_Clicked(object sender, RoutedEventArgs e)
         {
-            DateTimeOffset selectedDate = (DateTimeOffset)NewEventCalendarDatePicker.Date;
+            DateTimeOffset selectedDate = 
+            NewEventCalendarDatePicker.Date.HasValue ? NewEventCalendarDatePicker.Date.Value : DateTimeOffset.Now;
+
             string selectedDateFormated = selectedDate.ToString("dddd, dd MMMM");
             
             TimeSpan selectedTime = NewEventTimePicker.Time;

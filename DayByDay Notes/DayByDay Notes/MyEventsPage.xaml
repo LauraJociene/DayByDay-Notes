@@ -27,33 +27,46 @@
             <ColumnDefinition Width="426*"/>
         </Grid.ColumnDefinitions>
         <RelativePanel>
-            
+
         </RelativePanel>
         <Button x:Name="NotesButton" Content="Notes"
                 Grid.Column="1"
                 Grid.Row ="0"
                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
-                  Click="NotesButton_Click"/>
+                  Click="NotesButton_Click"
+                Background= "Black"
+                Foreground="White"/>
         <Button x:Name="ListsButton" Content="Lists" 
                   Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
-                  Click="ListsButton_Click"/>
+                  Click="ListsButton_Click"
+                Background= "Black"
+                Foreground="White"/>
         <Button x:Name="EventsButton" Content="Events"
                   Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
-                  Click="EventsButton_Click"/>
-        <Button x:Name="BackButton" Content="Back"
+                  Click="EventsButton_Click"
+                Background= "Black"
+                Foreground="White"/>
+        <Button x:Name="BackButton"
                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Grid.Column="0"
                   Grid.Row="0"
                   Margin="10"
-                  Click="BackButton_Click"/>
-
-        <Button x:Name="AddButton" Content="+"
+                  Click="BackButton_Click"
+                  FontFamily="Segoe MDL2 Assets"
+                  Content="&#xE72B;"
+                  Foreground="White" Background="Black">
+        </Button>
+        <Button x:Name="AddButton"
                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Grid.Row="1" Grid.Column="0"
-                  Margin="10">
+                  Margin="10"
+                  FontFamily="Segoe MDL2 Assets"
+                  Content="&#xE109;"
+                    Background="White"
+                    Foreground="Black">
             <Button.Flyout>
                 <Flyout Placement="Right">
                     <StackPanel
@@ -62,32 +75,37 @@
             Grid.Column="1" Grid.Row="4" 
             Grid.RowSpan="1" Grid.ColumnSpan="3">
 
+                        <TextBlock Text="Content:"/>
                         <TextBox Name="NewEventInputTextBox" PlaceholderText="Add content about your new Event"/>
+                        <TextBlock Text="Date:"/>
                         <CalendarDatePicker
                             PlaceholderText="Choose a date"
                             DateFormat="{}{dayofweek.full},{day.integer} {month.full}"
                             Name="NewEventCalendarDatePicker"/>
+                        <TextBlock Text="Time:"/>
                         <TimePicker Name="NewEventTimePicker"/>
 
                         <Button 
                             Name="AddNewEventButton"
                             Content="Add New Event" 
-                            Click="AddNewEventButton_Clicked"/>
+                            Click="AddNewEventButton_Clicked"
+                            Background="Black"
+                            Foreground="White"/>
 
                     </StackPanel>
                 </Flyout>
             </Button.Flyout>
         </Button>
-        <Button x:Name="SettingsButton" Content="Settings"
+        <Button x:Name="SettingsButton"
                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                   Margin="10"
                   Grid.Row="2" Grid.Column="0"
-                  Click="SettingsButton_Click"/>
-        <Button x:Name="SearchButton" Content="Search"
-                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                  Margin="10"
-                  Grid.Row="3" Grid.Column="0"
-                  Click="SearchButton_Click"/>
+                  Click="SettingsButton_Click"
+                  FontFamily="Segoe MDL2 Assets"
+                  Content="&#xE713;"
+                    Background="White"
+                    Foreground="Black">
+        </Button>
         <CalendarView HorizontalAlignment="Stretch"
                       VerticalAlignment="Stretch" Grid.Row="1"                       
                       Margin="10" 
@@ -97,9 +115,9 @@
 
         <StackPanel x:Name="listView" 
                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                   Margin="10"
+                   Margin="10,10,10,0"
                    Grid.Column="1" Grid.Row="1" 
-                   Grid.RowSpan="4" Grid.ColumnSpan="3">
+                   Grid.RowSpan="5" Grid.ColumnSpan="3">
 
             <ListView ItemsSource="{x:Bind Events}">
                 <ListView.ItemTemplate>
@@ -108,6 +126,8 @@
                             <TextBlock Text="{x:Bind Content}" FontWeight="Bold" FontSize="18"/>
                             <TextBlock Text="{x:Bind Date}" FontStyle="Italic"/>
                             <TextBlock Text="{x:Bind Time}" FontWeight="Bold"/>
+                            
+                            <RadioButton VerticalAlignment="Center" Content="Remove" FontSize="10"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
